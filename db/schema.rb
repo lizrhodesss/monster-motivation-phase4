@@ -35,7 +35,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_04_163255) do
   end
 
   create_table "survey_forms", force: :cascade do |t|
-    t.integer "user_id"
     t.string "name"
     t.integer "feeling_check"
     t.string "learned_today"
@@ -57,8 +56,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_04_163255) do
     t.string "email"
     t.integer "cohort_id"
     t.integer "survey_form_id"
-    t.integer "non_tech_resources_id"
-    t.integer "tech_resources_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

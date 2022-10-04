@@ -6,8 +6,6 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :email
       t.integer :cohort_id
       t.integer :survey_form_id
-      t.integer :non_tech_resources_id
-      t.integer :tech_resources_id
 
       t.timestamps
     end
