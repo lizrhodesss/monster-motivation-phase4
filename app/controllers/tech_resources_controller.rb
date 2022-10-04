@@ -1,0 +1,2 @@
+class TechResourcesController < ApplicationController
+end

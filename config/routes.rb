@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
+  resources :quotes
+  resources :tech_resources
+  resources :non_tech_resources
+  resources :survey_forms
+  resources :users
+  resources :cohorts
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
 
-  Rails.application.routes.draw do
     # route to test your configuration
     get '/hello', to: 'application#hello_world'
-  end
+
+    get '*path',
+    to: 'fallback#index',
+    constraints: ->(req) { !req.xhr? && req.format.html? }
 end

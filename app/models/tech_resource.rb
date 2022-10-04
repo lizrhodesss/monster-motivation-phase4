@@ -1,0 +1,2 @@
+class TechResource < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class NonTechResourcesController < ApplicationController
+end
