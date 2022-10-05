@@ -52,7 +52,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_04_163255) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
     t.string "email"
     t.integer "cohort_id"
     t.integer "survey_form_id"
