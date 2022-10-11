@@ -1,26 +1,15 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import LoginForm from "./LoginForm"
-// import Home from "./Home"
+import Home from "./Home"
 import NavBar from "./NavBar"
+import Resources from "./Resources"
+import Signup from "./Signup"
+import Quotes from "./Quotes"
 
 
 function App() {
   const [user, setUser] = useState(null);
-
-  
-  // useEffect(() => {
-  //   // auto-login
-  //   fetch("/me").then((r) => {
-  //     if (r.ok) {
-  //       r.json().then((user) => {
-  //         setUser(user)
-      
-  //       });
-  //     }
-  //   });
-  // }, []);
-  
 
   useEffect(() => {
     // auto-login
@@ -41,13 +30,16 @@ function App() {
         <LoginForm user={user} setUser={setUser}/>
           </Route>
           <Route exact path="/signup">
-        <LoginForm user={user} setUser={setUser}/>
-          </Route>
-          <Route exact path="/new">
-            {/* <Component /> */}
+        <Signup user={user} setUser={setUser}/>
           </Route>
           <Route exact path="/">
-            {/* <Component /> */}
+            <Home user={user} setUser={setUser}/>
+          </Route>
+          <Route exact path="/resources">
+            <Resources />
+          </Route>
+          <Route exact path="/quotes">
+        <Quotes user={user} setUser={setUser}/>
           </Route>
         </Switch>
       </main>
@@ -59,22 +51,3 @@ function App() {
 export default App;
 
 
-
-{/* <BrowserRouter>
-    <div className="App">
-    <NavBar/ >
-    <Login user = {user} setUser={setUser}/>
-     <Switch>
-        <Route exact path="/quotes">
-          <h1>Quotes</h1>
-        </Route>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/resources">
-          <h1>Resources</h1> 
-          //make these components
-          </Route>
-      </Switch>
-    </div>
-  </BrowserRouter> */}

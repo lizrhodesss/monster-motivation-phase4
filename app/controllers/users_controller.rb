@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     end
 
     def create
+      
         user = User.create!(user_params)
         session[:user_id] = user.id
         render json: user, stauts: :created
@@ -30,6 +31,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.permit(:username, :password, :email, :cohort_id)
+        params.permit( :username, :password, :email, :cohort_id, :survey_form_id)
     end
 end
